@@ -39,22 +39,22 @@ Patient.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
-    conditions: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      references: {
-        model: `conditions`,
-        key: `name`,
-      },
-    },
-    drugs: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      references: {
-        model: `drugs`,
-        key: `name`,
-      },
-    },
+    // conditions: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    //   references: {
+    //     model: `conditions`,
+    //     key: `condition_name`,
+    //   },
+    // },
+    // drugs: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    //   references: {
+    //     model: `drugs`,
+    //     key: `drug_name`,
+    //   },
+    // },
 
   },
   {

@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Jimmy",
+    "id": "1",
+    "age": "45",
+    "password": "password12345",
+    "allergies": "Lisinopril",
+    "surgeries": "CABG",
+    "conditions": "Hypertension",
+    "drugs": "Atenolol"
+  },
+  {
+    "name": "Priya",
+    "id": "2",
+    "age": "20",
+    "password": "password12345",
+    "allergies": "",
+    "surgeries": "Tonsillectomy",
+    "conditions": "Hypothryoidism",
+    "drugs": "Levothyroxine"
+  },
+  {
+  "name": "Susie",
+  "id": "3",
+  "age": "72",
+  "password": "password12345",
+  "allergies": "Sulfa",
+  "surgeries": "Hysterectomy",
+  "conditions": "Hyperlipidemia",
+  "drugs": "Simvastatin"
+  }
+]

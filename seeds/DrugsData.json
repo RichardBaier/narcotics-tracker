@@ -1,0 +1,20 @@
+[
+    {
+       "drug_name": "Atenolol",
+       "dose": "50",
+       "frequency": "once a day",
+       "patient_id": "1"
+    },
+    {
+        "drug_name": "Xanax",
+       "dose": "1",
+       "frequency": "as needed",
+       "patient_id": "2"
+    },
+    {
+        "drug_name": "Simvastatin",
+       "dose": "25",
+       "frequency": "once a day",
+       "patient_id": "3"
+    }
+]
