@@ -1,13 +1,26 @@
-const User = require('./User');
-const Project = require('./Project');
+const Patient = require('./Patient');
+const Drugs = require('./Drugs');
+const Conditions = require('./Conditions');
 
-User.hasMany(Project, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE'
+//Setting up model relationships
+Patient.hasMany(Conditions, {
+  foreignKey: `name`
 });
 
-Project.belongsTo(User, {
-  foreignKey: 'user_id'
+Patient.hasMany(Drugs, {
+  foreignKey: `name`
 });
 
-module.exports = { User, Project };
+Drugs.belongsTo(Patient, {
+  foreignKey: 'id'
+});
+
+Conditions.belongsTo(Patient, {
+  foreignKey: `id`
+});
+
+Conditions.hasMany(Drugs, {
+  foreignKey: `name`
+});
+
+module.exports = { Patient, Drugs, Conditions };
