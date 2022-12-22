@@ -4,6 +4,8 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
+require('dotenv').config();
+const {Drugs, Patient} = require(`./models`)
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -15,7 +17,7 @@ const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({});
 
 const sess = {
-  secret: 'Super secret secret', //make sure to protect this
+  secret: process.env.secret, //make sure to protect this- done
   cookie: {
     maxAge: 300000,
     httpOnly: true,
@@ -28,6 +30,7 @@ const sess = {
     db: sequelize
   })
 };
+
 
 app.use(session(sess));
 

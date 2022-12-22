@@ -7,12 +7,12 @@ Drugs.init(
   {
     id: {
       type: DataTypes.INTEGER,
+      primaryKey: true, 
       allowNull: false,
       autoIncrement: true,
     },
-    name: {
+    drug_name: {
       type: DataTypes.STRING,
-      primaryKey: true,
       allowNull: false,
     },
     dose: {
@@ -23,6 +23,13 @@ Drugs.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    patient_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "patient",
+        key: "id" 
+      }
+    }
   },
   {
     sequelize,

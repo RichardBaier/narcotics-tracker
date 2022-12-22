@@ -10,7 +10,7 @@ Conditions.init(
       allowNull: false,
       autoIncrement: true,
     },
-    name: {
+    condition_name: {
       type: DataTypes.STRING,
       primaryKey: true,
       allowNull: false,

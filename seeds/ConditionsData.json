@@ -1,0 +1,12 @@
+[{
+    "condition_name": "Hypertension",
+    "years": "5"
+},
+{
+    "condition_name": "Hyperlipidemia",
+    "years": "10"
+},
+{
+    "condition_name": "Diabetes",
+    "years": "35"
+}]
