@@ -9,11 +9,11 @@ const conditionsData = require('./ConditionsData.json');
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
- await Patient.bulkCreate(patientData);
+  await Patient.bulkCreate(patientData);
 
- await Drugs.bulkCreate(drugsData);
+  await Drugs.bulkCreate(drugsData);
 
-// await Conditions.bulkCreate(conditionsData);
+  await Conditions.bulkCreate(conditionsData);
 
   process.exit(0);
 };

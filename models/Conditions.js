@@ -7,18 +7,25 @@ Conditions.init(
   {
     id: {
       type: DataTypes.INTEGER,
+      primaryKey: true,
       allowNull: false,
       autoIncrement: true,
     },
     condition_name: {
       type: DataTypes.STRING,
-      primaryKey: true,
       allowNull: false,
     },
     years: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    condition_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "patient",
+        key: "id" 
+      },
+    }
   },
   {
     sequelize,
