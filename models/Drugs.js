@@ -28,7 +28,7 @@ Drugs.init(
       references: {
         model: "patient",
         key: "id" 
-      }
+      },
     }
   },
   {
