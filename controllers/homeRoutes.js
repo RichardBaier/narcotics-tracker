@@ -1,25 +1,25 @@
 const router = require('express').Router();
-const { Project, User } = require('../models');
+const { Conditions, Patient, Drugs } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
-    const projectData = await Project.findAll({
+    // Get all conditions and JOIN with patient data
+    const conditionData = await Conditions.findAll({
       include: [
         {
-          model: User,
+          model: Patient,
           attributes: ['name'],
         },
       ],
     });
 
     // Serialize data so the template can read it
-    const projects = projectData.map((project) => project.get({ plain: true }));
+    const conditions = conditionData.map((condition) => condition.get({ plain: true }));
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
-      projects, 
+      conditions, 
       logged_in: req.session.logged_in 
     });
   } catch (err) {
@@ -27,21 +27,68 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/project/:id', async (req, res) => {
+router.get('/condition/:id', async (req, res) => {
   try {
-    const projectData = await Project.findByPk(req.params.id, {
+    const conditionData = await Conditions.findByPk(req.params.id, {
       include: [
         {
-          model: User,
+          model: Patient,
           attributes: ['name'],
         },
       ],
     });
 
-    const project = projectData.get({ plain: true });
+    const condition = conditionData.get({ plain: true });
 
-    res.render('project', {
-      ...project,
+    res.render('conditions', {
+      ...condition,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/', async (req, res) => {
+  try {
+    // Get all drugs and JOIN with patient data
+    const drugData = await Drugs.findAll({
+      include: [
+        {
+          model: Patient,
+          attributes: ['name'],
+        },
+      ],
+    });
+
+    // Serialize data so the template can read it
+    const drugs = drugData.map((drug) => drug.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    res.render('homepage', { 
+      drugs, 
+      logged_in: req.session.logged_in 
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/drug/:id', async (req, res) => {
+  try {
+    const drugData = await Drugs.findByPk(req.params.id, {
+      include: [
+        {
+          model: Patient,
+          attributes: ['name'],
+        },
+      ],
+    });
+
+    const drug = drugData.get({ plain: true });
+
+    res.render('medications', {
+      ...drug,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -53,15 +100,15 @@ router.get('/project/:id', async (req, res) => {
 router.get('/profile', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
+    const patientData = await Patient.findByPk(req.session.patient_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Project }],
+      include: [{ model: Conditions, Drugs }],
     });
 
-    const user = userData.get({ plain: true });
+    const patient = patientData.get({ plain: true });
 
-    res.render('profile', {
-      ...user,
+    res.render('patient', {
+      ...patient,
       logged_in: true
     });
   } catch (err) {
