@@ -35,14 +35,14 @@ Patient.init(
         len: [8],
       },
     },
-    allergies: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    surgeries: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
+    // allergies: {
+    //   type: DataTypes.STRING,
+    //   allowNull: true,
+    // },
+    // surgeries: {
+    //   type: DataTypes.STRING,
+    //   allowNull: true,
+    // },
     // conditions: {
     //   type: DataTypes.STRING,
     //   allowNull: false,
