@@ -1,29 +1,21 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Drugs extends Model {}
+class Allergies extends Model {}
 
-Drugs.init(
+Allergies.init(
   {
     id: {
       type: DataTypes.INTEGER,
-      primaryKey: true, 
+      primaryKey: true,
       allowNull: false,
       autoIncrement: true,
     },
-    drug_name: {
+    allergy_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    dose: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    frequency: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    drug_id: {
+    allergy_id: {
       type: DataTypes.INTEGER,
       references: {
         model: "patient",
@@ -36,8 +28,8 @@ Drugs.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'drugs',
+    modelName: 'allergies',
   }
 );
 
-module.exports = Drugs;
+module.exports = Allergies;
