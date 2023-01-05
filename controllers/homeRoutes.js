@@ -97,7 +97,7 @@ router.get('/drug/:id', async (req, res) => {
 });
 
 // Use withAuth middleware to prevent access to route
-router.get('/profile', withAuth, async (req, res) => {
+router.get('/homepage', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const patientData = await Patient.findByPk(req.session.patient_id, {
