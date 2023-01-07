@@ -1,0 +1,20 @@
+<div class='add-condition-container'>
+  <form class='new-condition-form'>
+    <label for='condition_name'>
+      Condition Name:
+    </label>
+    <br />
+    <textarea id='condition_name' rows='2' cols='30'>
+      {{conditions.condition_name}}
+    </textarea>
+    <br />
+    <label for='condition_years'>
+      Number of years with condition:
+    </label>
+    <br />
+    <textarea id='condition_years' name='condition_years' rows='5' cols='30'>
+      {{conditions.years}}
+    </textarea>
+  </form>
+</div>
+<script src='../public/js/profile.js'></script>

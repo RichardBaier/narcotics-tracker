@@ -8,12 +8,15 @@ const addAllergy = async (event) => {
     const response = await fetch('/api/allergies', {
       method: 'POST',
       body: JSON.stringify({ allergy }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
     });
 
     if (response.ok) {
       document.location.replace('/allergies');
     } else {
-      alert(response.statusText);
+      alert('Failed to add allergy');
     }
   }
 };
@@ -29,12 +32,15 @@ const addCondition = async (event) => {
     const response = await fetch('/api/conditions', {
       method: 'POST',
       body: JSON.stringify({ condition }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
     });
 
     if (response.ok) {
       document.location.replace('/conditions');
     } else {
-      alert(response.statusText);
+      alert('Failed to add condition');
     }
   }
 };
@@ -51,12 +57,15 @@ const addDrug = async (event) => {
     const response = await fetch('/api/drugs', {
       method: 'POST',
       body: JSON.stringify({ drug }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
     });
 
     if (response.ok) {
       document.location.replace('/drugs');
     } else {
-      alert(response.statusText);
+      alert('Failed to add drug');
     }
   }
 };
@@ -73,12 +82,15 @@ const addSurgery = async (event) => {
     const response = await fetch('/api/surgeries', {
       method: 'POST',
       body: JSON.stringify({ surgery }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
     });
 
     if (response.ok) {
       document.location.replace('/surgeries');
     } else {
-      alert(response.statusText);
+      alert('Failed to add surgery');
     }
   }
 };
