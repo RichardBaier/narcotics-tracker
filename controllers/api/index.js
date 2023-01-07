@@ -4,5 +4,6 @@ const conditionRoutes = require('./conditionRoutes');
 
 router.use('/patients', patientRoutes);
 router.use('/conditions', conditionRoutes);
+// Do we need to add additional routes here??
 
 module.exports = router;
