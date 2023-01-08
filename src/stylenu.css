@@ -1,0 +1,104 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #fff;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+body {
+  background-image: url(../src/images/49.-Soft-Peach_1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+form h2 {
+  text-align: center;
+  font-size: 2em;
+}
+form p {
+  margin: 20px;
+  text-align: center;
+  font-size: 0.75em;
+}
+.form-group {
+  margin-top: 50px;
+}
+.box-nu {
+  width: 400px;
+  height: 520px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+.box-nu .shape-nu {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  border-radius: 50%;
+}
+.shape-nu:first-child {
+  background: linear-gradient(rgb(31, 31, 164), rgb(95, 95, 246));
+  left: -320px;
+  top: -250px;
+}
+.shape-nu:last-child {
+  background: linear-gradient(to right, rgb(122, 169, 182), rgb(21, 168, 201));
+  right: -325px;
+  bottom: -200px;
+}
+.form-nu {
+  height: 750px;
+  width: 850px;
+  background: rgb(54, 54, 54, 0.3);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(62, 62, 62, 0.043);
+  box-shadow: 0 0 40px rgb(56, 56, 56, 0.5);
+  padding: 50px 35px;
+}
+.form-nu input {
+  height: 50px;
+  width: 100%;
+  background: rgb(56, 56, 56, 0.5);
+  border-radius: 5px;
+  margin-top: 30px;
+  font-size: 14px;
+  font-weight: 300px;
+}
+::placeholder {
+  color: rgba(245, 245, 245, 0.295);
+  padding-left: 10px;
+}
+.form-nu label {
+  visibility: hidden;
+  margin: 0, 0, 0, 0;
+  font-size: 0.5em;
+}
+.btn-nu {
+  margin-top: 30px;
+  width: 50%;
+  background: rgba(86, 86, 86, 0.219);
+  color: whitesmoke;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  box-shadow: 0 0 10px;
+}
+.btn-nu:hover {
+  background: rgba(160, 186, 227, 0.3);
+}
+.btn-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
