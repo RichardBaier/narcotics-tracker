@@ -181,6 +181,7 @@ body {
 }
 /* The conditions popup form - hidden by default */
 .form-popup {
+  
   display: none;
   position: fixed;
   bottom: 0;
