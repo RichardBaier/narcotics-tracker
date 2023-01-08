@@ -87,7 +87,7 @@ router.get('/drug/:id', async (req, res) => {
 
     const drug = drugData.get({ plain: true });
 
-    res.render('medications', {
+    res.render('drugs', {
       ...drug,
       logged_in: req.session.logged_in
     });

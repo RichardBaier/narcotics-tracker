@@ -2,9 +2,9 @@
 
 ## Description
 
-This project was created to help patients collect their health data in one place so it can be shown to a health care professional easily at a medical appointment. The emphasis was on clean user interface and simple updating so that patients of all ages or techonological experience could use it effectively. At a medical appointment is often easy to forget that one medication you are taking, or that one surgery you had 20 years ago. Having this app can make that information available to you anywhere you are quickly and easily. 
+This project was created to help patients collect their health data in one place so it can be shown to a health care professional easily at a medical appointment. The emphasis was on clean user interface and simple updating so that patients of all ages or technological experience could use it effectively. At a medical appointment is often easy to forget that one medication you are taking, or that one surgery you had 20 years ago. Having this app can make that information available to you anywhere you are quickly and easily. 
 
-Our group learned a lot about the importance of collaboration when underataking a big project. Having multiple different points of view and experience helped us to create a much better project than any of us could've done individually. It helped us to refine our useage of many technologies we have studied (eg sequilize, handlebars, MYSQL) and helped us to learn some new technologies as well. 
+Our group learned a lot about the importance of collaboration when undertaking a big project. Having multiple different points of view and experience helped us to create a much better project than any of us could've done individually. It helped us to refine our usage of many technologies we have studied (eg sequilize, handlebars, MYSQL) and helped us to learn some new technologies as well. 
 
 ## Table of Contents (Optional)
 

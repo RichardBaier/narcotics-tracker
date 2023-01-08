@@ -1,41 +1,57 @@
-<html lang='en'>
-
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <meta charset='UTF-8' />
-    <title>Health Data</title>
-    <link rel='stylesheet' href='/css/style.css' />
-  </head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Patient Health Data</title>
+  <link rel="stylesheet" href="/public/css/styles.css">
 
-  <body>
-    <div class='flex-column justify-space-around'>
-      <header class='display-flex justify-space-between align-center p-2'>
-        <h1>
-          <a href='/'>Patient Health Data</a>
-        </h1>
-        <nav>
-          <!-- Conditionally render login or logout links -->
-          {{#if logged_in}}
-            <a href='/public/js/profile.js'>profile</a>
-            |
-            <button class='no-button' id='logout'>logout</button>
-          {{else}}
-            <a href='/public/js/login.js'>login</a>
-          {{/if}}
-        </nav>
-      </header>
-      <main class='container container-fluid mt-5'>
-        <!-- Render the sub layout -->
-        {{{body}}}
-      </main>
-      <footer>
 
-      </footer>
-    </div>
+</head>
+<body>
+	{{!-- NAVBAR (consistent across all handlebar pages) --}}
+<div>
+  <nav class="navbar navbar-expand-lg custom-nav">
+  	<a class="navbar-brand" href="/">
+  		<h2 class="text-main custom-head "></span></h2>
+  	</a>
+      <button 
+        class="navbar-toggler " 
+        type="button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#navbarNavAltMarkup" 
+        aria-controls="navbarNavAltMarkup" 
+        aria-expanded="false" 
+        aria-label="Toggle navigation">
+        <span class=".navbar-light navbar-toggler-icon"></span>
+      </button>
+      <div class="flex-row-reverse collapse navbar-collapse " id="navbarNavAltMarkup">
+        <div class="navbar-nav pr-5">
+        {{#if logged_in}}
+        <a class="nav-item nav-link nav-color custom-link" href="/">Home</a>
+        <a class="nav-item nav-link nav-color custom-link" href="/profile">Profile</a>
+        <a class="nav-item nav-link nav-color custom-link" href = "/" id="logout">Logout</a>
+        {{else}}
+        <a class="nav-item nav-link nav-color custom-link" href="/">Home</a>
+        <a class="nav-item nav-link nav-color custom-link" href="/login">Login</a>
+        <a class="nav-item nav-link nav-color custom-link" href="/signup">Sign up</a>
+        {{/if}}
+        </div>
+      </div>
+  </nav>
+</div>
 
-    <!-- Render script for logged in users only -->
-    {{#if logged_in}}
-      <script src='/public/js/logout.js'></script>
-    {{/if}}
-  </body>
+
+<main> 
+	{{{ body }}}
+</main>
+
+
+{{#if logged_in}}
+   <script src="/js/logout.js"></script>
+{{/if}}
+
+
+</body>
 
 </html>

@@ -1,0 +1,27 @@
+<div class='add-drug-container'>
+  <form class='new-drug-form'>
+    <label for='drug_name'>
+      Drug Name:
+    </label>
+    <br />
+    <textarea id='drug_name' rows='2' cols='30'>
+      {{drugs.drug_name}}
+    </textarea>
+    <br />
+    <label for='drug_dose'>
+      Dose amount:
+    </label>
+    <br />
+    <textarea id='drug_dose' name='drug_dose' rows='5' cols='30'>
+      {{drugs.dose}}
+    </textarea>
+    <label for='drug-frequency'>
+      Frequency:
+    </label>
+    <br />
+    <textarea id='drug_frequency' name='drug_frequency' rows='5' cols='30'>
+      {{drugs.frequency}}
+    </textarea>
+  </form>
+</div>
+<script src='../public/js/profile.js'></script>
