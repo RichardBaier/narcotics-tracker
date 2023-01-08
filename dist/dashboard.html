@@ -66,83 +66,6 @@
       </form>
     </div>
     <!-- end form -->
-    <!-- The prescriptions form -->
-    <div class="form-popup" id="prescriptionsForm">
-      <form action="/action_page.php" class="form-container">
-        <h1>Add a Prescription</h1>
-
-        <label for="prescriptions"><b>Prescription</b></label>
-        <input
-          type="text"
-          placeholder="What is the name of the Prescription?"
-          name="prescriptions"
-          required
-        />
-
-        <label for="dosage"><b>Dosage</b></label>
-        <input
-          type="text"
-          placeholder="What is your dosage?"
-          name="dosage"
-          required
-        />
-
-        <button type="submit" class="btn">ADD</button>
-        <button type="button" class="btn cancel" onclick="closeFormB()">
-          Cancel
-        </button>
-      </form>
-    </div>
-    <!-- end form -->
-    <!-- The allergies form -->
-    <div class="form-popup" id="allergiesForm">
-      <form action="/action_page.php" class="form-container">
-        <h1>Add a Allergy</h1>
-
-        <label for="allergies"><b>Allergy</b></label>
-        <input
-          type="text"
-          placeholder="What are you allergic to?"
-          name="allergies"
-          required
-        />
-        />
-
-        <button type="submit" class="btn">ADD</button>
-        <button type="button" class="btn cancel" onclick="closeFormC()">
-          Cancel
-        </button>
-      </form>
-    </div>
-    <!-- end form -->
-    <!-- The surgeries form -->
-    <div class="form-popup" id="surgeriesForm">
-      <form action="/action_page.php" class="form-container">
-        <h1>Add a Surgery</h1>
-
-        <label for="surgeries"><b>Allergy</b></label>
-        <input
-          type="text"
-          placeholder="What Surgery did you had?"
-          name="surgeries"
-          required
-        />
-        <label for="date"><b>Date of Surgery</b></label>
-        <input
-          type="text"
-          placeholder="When did you have this surgery?"
-          name="date"
-          required
-        />
-        />
-
-        <button type="submit" class="btn">ADD</button>
-        <button type="button" class="btn cancel" onclick="closeFormD()">
-          Cancel
-        </button>
-      </form>
-    </div>
-    <!-- end form -->
     <div class="container">
       <div class="navbar">
         <div class="logo">
@@ -185,24 +108,14 @@
             </li>
 
             <li class="">
-              <i data-feather="plus-square"></i>
-              <a href="#" id="new-prescription-btn" onclick="openFormB()"
-                >Add New Prescription</a
-              >
             </li>
 
             <li class="">
               <i data-feather="plus-square"></i>
-              <a href="#" id="new-allergy-btn" onclick="openFormC()"
-                >Add New Allergy</a
-              >
             </li>
 
             <li class="">
               <i data-feather="plus-square"></i>
-              <a href="#" id="new-surgery-btn" onclick="openFormD()"
-                >Add New Surgery</a
-              >
             </li>
           </ul>
         </div>
