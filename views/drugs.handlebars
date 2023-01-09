@@ -1,21 +1,11 @@
-<header>My Health</header>
-    <nav class="sidebar">
-        <a href="" class="side-item">Account</a>
-        <a href="" class="side-item">Allergies</a>
-        <a href="" class="side-item">Conditions</a>
-        <a href="" class="side-item">Medications</a>
-    </nav>
-    <a href="newDrugForm.handlebars">button id="drug-add" class="addButton">Add Drug</button></a>
-    <div class="card">
-        <header class="card-title"
-            <h1>My Medications</h1>
-        </header>
-        <div class="card-info"
-            {{drugs.drug_name}}
-            <br>
-            {{drugs.dose}}
-            <br>
-            {{drugs.frequency}}
-        </div>
+<div class="card">
+    <div class="card-title">
+        <h1>{{drugs.drug_name}}</h1>
     </div>
-    <script src="../public/js/profile.js"></script>
+    <div class="card-info">
+        <br>
+        {{drugs.dose}}
+        <br>
+        {{drugs.frequency}}
+    </div>
+</div>

@@ -1,17 +1,8 @@
-<header>My Health</header>
-    <nav class="sidebar">
-        <a href="" class="side-item">Account</a>
-        <a href="" class="side-item">Allergies</a>
-        <a href="" class="side-item">Conditions</a>
-        <a href="" class="side-item">Medications</a>
-    </nav>
-    <a href="newSurgeryForm.handlebars">button id="surgery-add" class="addButton">Add Surgery</button></a>
-    <div class="card">
-        <header class="card-title"
-            <h1>My Surgeries</h1>
-        </header>
-        <div class="card-info"
-            {{surgeries.surgery_name}}
-        </div>
+<div class="card">
+    <div class="card-title">
+        <h3>Surgery</h3>
     </div>
-    <script src="../public/js/profile.js"></script>
+    <div class="card-info">
+        {{surgeries.surgery_name}}
+    </div>
+</div>
