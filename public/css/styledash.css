@@ -17,9 +17,11 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-image: url(./images/49.-Soft-Peach_1.jpg);
+  background-image: url(/public/images/49.-Soft-Peach_1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
 }
 .container {
   width: 90%;
@@ -101,7 +103,7 @@ body {
 }
 .container-body .sidebar {
   margin: 20px 0 20px 20px;
-  background: rgba(255, 255, 255, 0.279);
+  background: rgba(255, 255, 255, 0.121);
   border-radius: 14px;
   padding: 10px;
   border: 2px solid rgba(62, 62, 62, 0.03);

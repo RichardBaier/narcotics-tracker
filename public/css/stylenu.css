@@ -11,9 +11,11 @@
   text-decoration: none;
 }
 body {
-  background-image: url(../src/images/49.-Soft-Peach_1.jpg);
+  background-image: url(/public/images/49.-Soft-Peach_1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
 }
 form h2 {
   text-align: center;
@@ -101,4 +103,7 @@ form p {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+a {
+  color: rgb(189, 105, 105);
 }
