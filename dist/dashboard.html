@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Narco Dashboard</title>
+    <title>Health Data Dashboard</title>
     <link rel="stylesheet" href="../src/styledash.css" />
     <script src="https://unpkg.com/feather-icons"></script>
   </head>
@@ -70,11 +70,11 @@
       <div class="navbar">
         <div class="logo">
           <img src="../src/images/capsules.png" width="40px" alt="" />
-          <span class="logo-name">NARCO TRACKER</span>
+          <span class="logo-name">Health Data Tracker</span>
         </div>
         <div class="searchbox">
           <form action="">
-            <input type="text" placeholder="Seach" />
+            <input type="text" placeholder="Search" />
             <i class="search-icon" data-feather="search"></i>
           </form>
         </div>
@@ -106,17 +106,23 @@
                 >Add New Condition</a
               >
             </li>
-
-            <li class="">
-            </li>
-
             <li class="">
               <i data-feather="plus-square"></i>
+              <a href="#" id="new-condition-btn" onclick="openFormA()"
+                >Add New Prescription</a>
             </li>
-
             <li class="">
               <i data-feather="plus-square"></i>
+              <a href="#" id="new-condition-btn" onclick="openFormA()"
+                >Add New Allergy</a>
             </li>
+            <li class="">
+              <i data-feather="plus-square"></i>
+              <a href="#" id="new-condition-btn" onclick="openFormA()"
+                >Add New Surgery</a>
+            </li>
+
+          
           </ul>
         </div>
         <div class="main-body">
@@ -154,22 +160,22 @@
               <div class="column">
                 <div class="prescription">
                   <h3 class="card-title">Prescription</h3>
-                  <h2 class="name-of-prescription">Ibuprofin</h2>
-                  <span class="dosage">50mg</span>
+                  <h2 class="name-of-prescription">Ibuprofen</h2>
+                  <span class="dosage">400mg</span>
                 </div>
               </div>
               <div class="column">
                 <div class="prescription">
                   <h3 class="card-title">Prescription</h3>
-                  <h2 class="name-of-prescription">Ibuprofin</h2>
-                  <span class="dosage">50mg</span>
+                  <h2 class="name-of-prescription">Ibuprofen</h2>
+                  <span class="dosage">400mg</span>
                 </div>
               </div>
               <div class="column">
                 <div class="prescription">
                   <h3 class="card-title">Prescription</h3>
-                  <h2 class="name-of-prescription">Ibuprofin</h2>
-                  <span class="dosage">50mg</span>
+                  <h2 class="name-of-prescription">Ibuprofen</h2>
+                  <span class="dosage">400mg</span>
                 </div>
               </div>
             </div>
