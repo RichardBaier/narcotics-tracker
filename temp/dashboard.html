@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health Data Dashboard</title>
+    <link rel="stylesheet" href="../src/styledash.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <script src="../src/dash.js"></script>
+  <body>
+    <!-- The conditions form -->
+    <div class="form-popup" id="conditionsForm">
+      <form action="/action_page.php" class="form-container">
+        <h1>Add a Medical Condition</h1>
+
+        <label for="conditions"><b>Condition</b></label>
+        <input
+          type="text"
+          placeholder="What is your condition?"
+          name="condition"
+          required
+        />
+
+        <label for="length"><b>Length of Condition</b></label>
+        <input
+          type="text"
+          placeholder="How long have you had this condition?"
+          name="length"
+          required
+        />
+
+        <button type="submit" class="btn">ADD</button>
+        <button type="button" class="btn cancel" onclick="closeFormA()">
+          Cancel
+        </button>
+      </form>
+    </div>
+    <!-- end form -->
+    <!-- The prescriptions form -->
+    <div class="form-popup" id="prescriptionsForm">
+      <form action="/action_page.php" class="form-container">
+        <h1>Add a Prescription</h1>
+
+        <label for="prescriptions"><b>Condition</b></label>
+        <input
+          type="text"
+          placeholder="What is the name of the Prescription?"
+          name="prescriptions"
+          required
+        />
+
+        <label for="dosage"><b>Dosage</b></label>
+        <input
+          type="text"
+          placeholder="What is your dosage?"
+          name="dosage"
+          required
+        />
+
+        <button type="submit" class="btn">ADD</button>
+        <button type="button" class="btn cancel" onclick="closeFormB()">
+          Cancel
+        </button>
+      </form>
+    </div>
+    <!-- end form -->
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <img src="../src/images/capsules.png" width="40px" alt="" />
+          <span class="logo-name">Health Data Tracker</span>
+        </div>
+        <div class="searchbox">
+          <form action="">
+            <input type="text" placeholder="Search" />
+            <i class="search-icon" data-feather="search"></i>
+          </form>
+        </div>
+        <div class="navitem">
+          <div class="icons">
+            <ul>
+              <li><i data-feather="mail"></i></li>
+              <li><i data-feather="bell"></i></li>
+            </ul>
+          </div>
+          <div class="account">
+            <img src="../src/images/user.png" width="25px" alt="" />
+            <span class="profile-name">JEFFREY ACKERMAN</span>
+            <span class="patient-id">12345</span>
+          </div>
+        </div>
+      </div>
+      <div class="container-body">
+        <div class="sidebar">
+          <ul>
+            <li class="dashboard">
+              <i data-feather="user"></i>
+              <a href="#">Profile</a>
+            </li>
+
+            <li class="">
+              <i data-feather="plus-square"></i>
+              <a href="#" id="new-condition-btn" onclick="openFormA()"
+                >Add New Condition</a
+              >
+            </li>
+            <li class="">
+              <i data-feather="plus-square"></i>
+              <a href="#" id="new-condition-btn" onclick="openFormA()"
+                >Add New Prescription</a>
+            </li>
+            <li class="">
+              <i data-feather="plus-square"></i>
+              <a href="#" id="new-condition-btn" onclick="openFormA()"
+                >Add New Allergy</a>
+            </li>
+            <li class="">
+              <i data-feather="plus-square"></i>
+              <a href="#" id="new-condition-btn" onclick="openFormA()"
+                >Add New Surgery</a>
+            </li>
+
+          
+          </ul>
+        </div>
+        <div class="main-body">
+          <div class="title">
+            <span class="greeting">Hello Jeffrey Ackerman,</span>
+            <h2>Overview</h2>
+          </div>
+          <div class="cards">
+            <!-- start row 1 -->
+            <div class="row row-1">
+              <div class="column">
+                <div class="Conditions">
+                  <h3 class="card-title">Conditions</h3>
+                  <h2 class="name-of-Conditions">Headache</h2>
+                  <span class="duration-of-condition">2 years</span>
+                </div>
+              </div>
+              <div class="column">
+                <div class="Conditions">
+                  <h3 class="card-title">Conditions</h3>
+                  <h2 class="name-of-Conditions">Headache</h2>
+                  <span class="duration-of-condition">2 years</span>
+                </div>
+              </div>
+              <div class="column">
+                <div class="Conditions">
+                  <h3 class="card-title">Conditions</h3>
+                  <h2 class="name-of-Conditions">Headache</h2>
+                  <span class="duration-of-condition">2 years</span>
+                </div>
+              </div>
+            </div>
+            <!-- start row 2 -->
+            <div class="row row-2">
+              <div class="column">
+                <div class="prescription">
+                  <h3 class="card-title">Prescription</h3>
+                  <h2 class="name-of-prescription">Ibuprofen</h2>
+                  <span class="dosage">400mg</span>
+                </div>
+              </div>
+              <div class="column">
+                <div class="prescription">
+                  <h3 class="card-title">Prescription</h3>
+                  <h2 class="name-of-prescription">Ibuprofen</h2>
+                  <span class="dosage">400mg</span>
+                </div>
+              </div>
+              <div class="column">
+                <div class="prescription">
+                  <h3 class="card-title">Prescription</h3>
+                  <h2 class="name-of-prescription">Ibuprofen</h2>
+                  <span class="dosage">400mg</span>
+                </div>
+              </div>
+            </div>
+            <!-- start row 3 -->
+            <div class="row row-3">
+              <div class="column">
+                <div class="allergies">
+                  <h3 class="card-title">allergies</h3>
+                  <h2 class="name-of-allergies">Penicillin</h2>
+                </div>
+              </div>
+              <div class="column">
+                <div class="allergies">
+                  <h3 class="card-title">allergies</h3>
+                  <h2 class="name-of-allergies">Penicillin</h2>
+                </div>
+              </div>
+              <div class="column">
+                <div class="allergies">
+                  <h3 class="card-title">allergies</h3>
+                  <h2 class="name-of-allergies">Penicillin</h2>
+                </div>
+              </div>
+            </div>
+            <!-- start row 4 -->
+            <div class="row row-4">
+              <div class="column">
+                <div class="surgeries">
+                  <h3 class="card-title">surgeries</h3>
+                  <h2 class="name-of-surgeries">Brain Surgery</h2>
+                  <span class="date-of-surgery">October 2022</span>
+                </div>
+              </div>
+              <div class="column">
+                <div class="surgeries">
+                  <h3 class="card-title">surgeries</h3>
+                  <h2 class="name-of-surgeries">Brain Surgery</h2>
+                  <span class="date-of-surgery">October 2022</span>
+                </div>
+              </div>
+              <div class="column">
+                <div class="surgeries">
+                  <h3 class="card-title">surgeries</h3>
+                  <h2 class="name-of-surgeries">Brain Surgery</h2>
+                  <span class="date-of-surgery">October 2022</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>
