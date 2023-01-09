@@ -11,7 +11,7 @@ router.post('/signup', async (req, res) => {
       req.session.patient_id = patientData.id;
       req.session.logged_in = true;
 
-      res.status(200).json(userData);
+      res.status(200).json(patientData);
     });
   } catch (err) {
     res.status(400).json(err);
@@ -93,5 +93,12 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
+
+// get all patient data
+router.get('/', (req, res) =>{
+  Patient.findAll()
+    .then((patientData) => res.json(patientData))
+});
+
 
 module.exports = router;

@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Conditions, Patient, Drugs, Allergies, Surgeries } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/profile', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     // Get all conditions and JOIN with patient data
     const conditionData = await Conditions.findAll({
@@ -49,7 +49,7 @@ router.get('/condition/:id', async (req, res) => {
   }
 });
 
-router.get('/profile', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     // Get all drugs and JOIN with patient data
     const drugData = await Drugs.findAll({
@@ -97,7 +97,7 @@ router.get('/drug/:id', async (req, res) => {
 });
 
 // Surgery get request
-router.get('/profile', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     // Get all drugs and JOIN with patient data
     const surgeryData = await Surgeries.findAll({
@@ -145,7 +145,7 @@ router.get('/surgery/:id', async (req, res) => {
 });
 
 // Allergy get request
-router.get('/profile', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     // Get all drugs and JOIN with patient data
     const allergyData = await Allergies.findAll({
