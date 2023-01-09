@@ -1,9 +1,19 @@
-   <!-- The conditions form -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health Data Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <script src="/temp/src/js/dash.js"></script>
+  <body>
+    <!-- The conditions form -->
     <div class="form-popup" id="conditionsForm">
-      <form class="form-container">
+      <form action="/action_page.php" class="form-container">
         <h1>Add a Medical Condition</h1>
 
-        <label for="conditions"><b>Condition</b></label>
         <input
           type="text"
           placeholder="What is your condition?"
@@ -11,11 +21,10 @@
           required
         />
 
-        <label for="length"><b>Length of Condition</b></label>
         <input
           type="text"
           placeholder="How long have you had this condition?"
-          name="length"
+          name="conditionLength"
           required
         />
 
@@ -26,12 +35,11 @@
       </form>
     </div>
     <!-- end form -->
-    <!-- The prescriptions form -->
+    <!-- The allergies form -->
     <div class="form-popup" id="prescriptionsForm">
       <form action="/action_page.php" class="form-container">
         <h1>Add a Prescription</h1>
 
-        <label for="prescriptions"><b>Condition</b></label>
         <input
           type="text"
           placeholder="What is the name of the Prescription?"
@@ -39,7 +47,6 @@
           required
         />
 
-        <label for="dosage"><b>Dosage</b></label>
         <input
           type="text"
           placeholder="What is your dosage?"
@@ -53,15 +60,56 @@
         </button>
       </form>
     </div>
-    <!-- end form -->
+    <div class="form-popup" id="allergiesForm">
+      <form action="/action_page.php" class="form-container">
+        <h1>Add an Allergy</h1>
+
+        <input
+          type="text"
+          placeholder="What are you Allergic to?"
+          name="allergies"
+          required
+        />
+
+        <button type="submit" class="btn">ADD</button>
+        <button type="button" class="btn cancel" onclick="closeFormC()">
+          Cancel
+        </button>
+      </form>
+    </div>
+    <!-- end allergies form -->
+    <div class="form-popup" id="surgeriesForm">
+      <form action="/action_page.php" class="form-container">
+        <h1>Add a Surgery</h1>
+
+        <input
+          type="text"
+          placeholder="What surgery did you have?"
+          name="surgeries"
+          required
+        />
+
+        <input
+          type="text"
+          placeholder="When did you have your surgery?"
+          name="surgeryDate"
+          required
+        />
+
+        <button type="submit" class="btn">ADD</button>
+        <button type="button" class="btn cancel" onclick="closeFormD()">
+          Cancel
+        </button>
+      </form>
+    </div>
     <div class="container">
       <div class="navbar">
         <div class="logo">
-          <img src="../src/images/capsules.png" width="40px" alt="" />
+          <img src="/temp/src/images/capsules.png" width="40px" alt="" />
           <span class="logo-name">Health Data Tracker</span>
         </div>
         <div class="searchbox">
-          <form>
+          <form action="">
             <input type="text" placeholder="Search" />
             <i class="search-icon" data-feather="search"></i>
           </form>
@@ -74,9 +122,9 @@
             </ul>
           </div>
           <div class="account">
-            <img src="../src/images/user.png" width="25px" alt="" />
-            <span class="profile-name">{{patient.name}}</span>
-            <span class="patient-id">{{patient.id}}</span>
+            <img src="/temp/src/images/user.png" width="25px" alt="" />
+            <span class="profile-name">JEFFREY ACKERMAN</span>
+            <span class="patient-id">12345</span>
           </div>
         </div>
       </div>
@@ -90,66 +138,132 @@
 
             <li class="">
               <i data-feather="plus-square"></i>
-              <a href="#" id="new-condition-btn" onclick="openFormA()"
-                >Add New Condition</a
-              >
+              <a href="#" id="new-condition-btn" onclick="openFormA()">Add New
+                Condition</a>
             </li>
             <li class="">
               <i data-feather="plus-square"></i>
-              <a href="#" id="new-condition-btn" onclick="openFormA()"
-                >Add New Prescription</a>
+              <a href="#" id="new-prescription-btn" onclick="openFormB()">Add
+                New Prescription</a>
             </li>
             <li class="">
               <i data-feather="plus-square"></i>
-              <a href="#" id="new-condition-btn" onclick="openFormA()"
-                >Add New Allergy</a>
+              <a href="#" id="new-allergy-btn" onclick="openFormC()">Add New
+                Allergy</a>
             </li>
             <li class="">
               <i data-feather="plus-square"></i>
-              <a href="#" id="new-condition-btn" onclick="openFormA()"
-                >Add New Surgery</a>
+              <a href="#" id="new-surgery-btn" onclick="openFormD()">Add New
+                Surgery</a>
             </li>
 
-          
           </ul>
         </div>
         <div class="main-body">
           <div class="title">
-            <span class="greeting">Hello {{patient.name}},</span>
+            <span class="greeting">Hello Jeffrey Ackerman,</span>
             <h2>Overview</h2>
           </div>
           <div class="cards">
             <!-- start row 1 -->
-            {{#each conditions as |condition| }}
             <div class="row row-1">
-              <h3 class="card-title">Conditions</h3>
+              <div class="column">
+                <div class="Conditions">
+                  <h3 class="card-title">Conditions</h3>
+                  <h2 class="name-of-Conditions">Headache</h2>
+                  <span class="duration-of-condition">2 years</span>
+                </div>
+              </div>
+              <div class="column">
+                <div class="Conditions">
+                  <h3 class="card-title">Conditions</h3>
+                  <h2 class="name-of-Conditions">Headache</h2>
+                  <span class="duration-of-condition">2 years</span>
+                </div>
+              </div>
+              <div class="column">
+                <div class="Conditions">
+                  <h3 class="card-title">Conditions</h3>
+                  <h2 class="name-of-Conditions">Headache</h2>
+                  <span class="duration-of-condition">2 years</span>
+                </div>
+              </div>
             </div>
-            {{/each}}
             <!-- start row 2 -->
-            {{#each prescriptions as |prescription| }}
             <div class="row row-2">
-              
+              <div class="column">
+                <div class="prescription">
+                  <h3 class="card-title">Prescription</h3>
+                  <h2 class="name-of-prescription">Ibuprofen</h2>
+                  <span class="dosage">400mg</span>
+                </div>
+              </div>
+              <div class="column">
+                <div class="prescription">
+                  <h3 class="card-title">Prescription</h3>
+                  <h2 class="name-of-prescription">Ibuprofen</h2>
+                  <span class="dosage">400mg</span>
+                </div>
+              </div>
+              <div class="column">
+                <div class="prescription">
+                  <h3 class="card-title">Prescription</h3>
+                  <h2 class="name-of-prescription">Ibuprofen</h2>
+                  <span class="dosage">400mg</span>
+                </div>
+              </div>
             </div>
-            {{/each}}
             <!-- start row 3 -->
-            {{#each allergies as |allergy| }}
             <div class="row row-3">
-              
+              <div class="column">
+                <div class="allergies">
+                  <h3 class="card-title">allergies</h3>
+                  <h2 class="name-of-allergies">Penicillin</h2>
+                </div>
+              </div>
+              <div class="column">
+                <div class="allergies">
+                  <h3 class="card-title">allergies</h3>
+                  <h2 class="name-of-allergies">Penicillin</h2>
+                </div>
+              </div>
+              <div class="column">
+                <div class="allergies">
+                  <h3 class="card-title">allergies</h3>
+                  <h2 class="name-of-allergies">Penicillin</h2>
+                </div>
+              </div>
             </div>
-            {{/each}}
             <!-- start row 4 -->
-            {{#each surgeries as |surgery| }}
             <div class="row row-4">
-              
+              <div class="column">
+                <div class="surgeries">
+                  <h3 class="card-title">surgeries</h3>
+                  <h2 class="name-of-surgeries">Brain Surgery</h2>
+                  <span class="date-of-surgery">October 2022</span>
+                </div>
+              </div>
+              <div class="column">
+                <div class="surgeries">
+                  <h3 class="card-title">surgeries</h3>
+                  <h2 class="name-of-surgeries">Brain Surgery</h2>
+                  <span class="date-of-surgery">October 2022</span>
+                </div>
+              </div>
+              <div class="column">
+                <div class="surgeries">
+                  <h3 class="card-title">surgeries</h3>
+                  <h2 class="name-of-surgeries">Brain Surgery</h2>
+                  <span class="date-of-surgery">October 2022</span>
+                </div>
+              </div>
             </div>
-            {{/each}}
           </div>
         </div>
       </div>
     </div>
-
-    <script src="https://unpkg.com/feather-icons"></script>
     <script>
       feather.replace();
     </script>
-
+  </body>
+</html>

@@ -14,10 +14,8 @@ body {
   background-image: url(../src/images/49.-Soft-Peach_1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-nav {
-  z-index: 100;
+  background-position: center center;
+  background-attachment: fixed;
 }
 .box {
   width: 400px;
@@ -96,4 +94,7 @@ button {
 }
 button:hover {
   background: rgba(160, 186, 227, 0.3);
+}
+a {
+  color: rgb(189, 105, 105);
 }
