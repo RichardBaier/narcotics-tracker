@@ -54,6 +54,13 @@
           required
         />
 
+        <input
+          type="text"
+          placeholder="How often do you take this medication?"
+          name="frequency"
+          required
+        />
+
         <button type="submit" class="btn addButton">ADD</button>
         <button type="button" class="btn cancel" onclick="closeFormB()">
           Cancel
@@ -108,12 +115,13 @@
           <img src="/images/capsules.png" width="40px" alt="" />
           <span class="logo-name">Health Data Tracker</span>
         </div>
-        <div class="searchbox">
+        {{!-- feature functionality if we have time to implement it --}}
+        {{!-- <div class="searchbox">
           <form action="">
             <input type="text" placeholder="Search" />
             <i class="search-icon" data-feather="search"></i>
           </form>
-        </div>
+        </div> --}}
         <div class="navitem">
           <div class="icons">
             <ul>
@@ -123,8 +131,8 @@
           </div>
           <div class="account">
             <img src="/images/user.png" width="25px" alt="" />
-            <span class="profile-name">JEFFREY ACKERMAN</span>
-            <span class="patient-id">12345</span>
+            <span class="profile-name">{{patient.name}}</span>
+            <span class="patient-id">{{patient.id}}</span>
           </div>
         </div>
       </div>
@@ -161,13 +169,22 @@
         </div>
         <div class="main-body">
           <div class="title">
-            <span class="greeting">Hello Jeffrey Ackerman,</span>
+            <span class="greeting">Hello {{name}},</span>
             <h2>Overview</h2>
           </div>
           <div class="cards">
             <!-- start row 1 -->
             <div class="row row-1">
+              {{#each conditions as |conditions|}}
               <div class="column">
+                <div class="Conditions">
+                  <h3 class="card-title">Conditions</h3>
+                  <h2 class="name-of-Conditions">{{conditions.condition_name}}</h2>
+                  <span class="duration-of-condition">{{years}} years</span>
+                </div>
+              </div>
+                {{/each}}
+              {{!-- <div class="column">
                 <div class="Conditions">
                   <h3 class="card-title">Conditions</h3>
                   <h2 class="name-of-Conditions">Headache</h2>
@@ -180,24 +197,21 @@
                   <h2 class="name-of-Conditions">Headache</h2>
                   <span class="duration-of-condition">2 years</span>
                 </div>
-              </div>
-              <div class="column">
-                <div class="Conditions">
-                  <h3 class="card-title">Conditions</h3>
-                  <h2 class="name-of-Conditions">Headache</h2>
-                  <span class="duration-of-condition">2 years</span>
-                </div>
-              </div>
+              </div> --}}
             </div>
             <!-- start row 2 -->
             <div class="row row-2">
+               {{#each drugs as |drug|}}
               <div class="column">
                 <div class="prescription">
+                 
                   <h3 class="card-title">Prescription</h3>
-                  <h2 class="name-of-prescription">Ibuprofen</h2>
-                  <span class="dosage">400mg</span>
+                  <h2 class="name-of-prescription">{{drug_name}}</h2>
+                  <span class="dosage">{{drugs.dose}}</span>
+                  
                 </div>
               </div>
+              {{/each}}
               <div class="column">
                 <div class="prescription">
                   <h3 class="card-title">Prescription</h3>
@@ -217,8 +231,10 @@
             <div class="row row-3">
               <div class="column">
                 <div class="allergies">
-                  <h3 class="card-title">allergies</h3>
-                  <h2 class="name-of-allergies">Penicillin</h2>
+                  {{#each allergies as |allergies|}}
+                  <h3 class="card-title">Allergies</h3>
+                  <h2 class="name-of-allergies">{{allergies.allergy_name}}</h2>
+                  {{/each}}
                 </div>
               </div>
               <div class="column">
@@ -236,13 +252,17 @@
             </div>
             <!-- start row 4 -->
             <div class="row row-4">
+              {{#each surgeries as |surgeries|}}
               <div class="column">
                 <div class="surgeries">
-                  <h3 class="card-title">surgeries</h3>
-                  <h2 class="name-of-surgeries">Brain Surgery</h2>
+                  <h3 class="card-title">Surgeries</h3>
+                  
+                  <h2 class="name-of-surgeries">{{surgery_name}}</h2>
                   <span class="date-of-surgery">October 2022</span>
+                  
                 </div>
               </div>
+              {{/each}}
               <div class="column">
                 <div class="surgeries">
                   <h3 class="card-title">surgeries</h3>
