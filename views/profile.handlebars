@@ -131,8 +131,8 @@
           </div>
           <div class="account">
             <img src="/images/user.png" width="25px" alt="" />
-            <span class="profile-name">{{name}}</span>
-            <span class="patient-id">{{id}}</span>
+            <span class="profile-name">{{patient.name}}</span>
+            <span class="patient-id">{{patient.id}}</span>
           </div>
         </div>
       </div>
@@ -180,7 +180,7 @@
                 <div class="Conditions">
                   <h3 class="card-title">Conditions</h3>
                   <h2 class="name-of-Conditions">{{conditions.condition_name}}</h2>
-                  <span class="duration-of-condition">{{years}}</span>
+                  <span class="duration-of-condition">{{years}} years</span>
                 </div>
               </div>
                 {{/each}}
