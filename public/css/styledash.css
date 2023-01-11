@@ -107,7 +107,7 @@ body {
   border-radius: 14px;
   padding: 10px;
   border: 2px solid rgba(62, 62, 62, 0.03);
-  box-shadow: 0 0 40px rgba(168, 168, 168, 0.3);
+  box-shadow: 0 0 40px rgba(168, 168, 168, 0.719);
 }
 .container-body .sidebar ul li {
   padding: 10px;
